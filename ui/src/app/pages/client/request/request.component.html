@@ -1,0 +1,24 @@
+<p>request</p>
+<!-- *ngIf="client" -->
+<div *ngIf="client" class="client-request">
+  <h1>Выберите удобные дни</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <div *ngFor="let day of dayList">
+        <label>
+          <input type="checkbox" [value]="day.id" (change)="onCheckboxChange($event)" />
+          {{day.name}}
+        </label>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Отправить</button>
+    <br>
+    <br>
+    <button class="btn btn-primary" type="submit" [routerLink]="'/clientStart'">
+      <span>Назад</span>
+    </button>
+  </form>
+</div>
+

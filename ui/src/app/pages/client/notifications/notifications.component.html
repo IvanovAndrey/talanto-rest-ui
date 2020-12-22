@@ -1,0 +1,28 @@
+<p>notifications </p>
+
+<div *ngIf="client" class="client-request">
+  <table>
+    <tr>
+      <th>№</th>
+      <th>От кого</th>
+      <th>Статус</th>
+      <th>Тема</th>
+      <th>Текст</th>
+      <th>Подробнее</th>
+    </tr>
+    <tr *ngFor="let notification of createNotifications">
+      <td>{{notification.id}}</td>
+      <td>{{notification.idFrom}}</td>
+      <td>{{notification.status}}</td>
+      <td>{{notification.theme}}</td>
+      <td>{{notification.text}}</td>
+      <td><li>
+        <button mat-raised-button (click)="openDialog(notification.id)">Подробнее</button>
+      </li></td>
+    </tr>
+  </table>
+  <br>
+  <button class="btn btn-primary" type="submit" [routerLink]="'/clientStart'">
+    <span>Назад</span>
+  </button>
+</div>

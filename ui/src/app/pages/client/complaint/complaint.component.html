@@ -1,0 +1,39 @@
+<p>complaint</p>
+
+<div *ngIf="client" class="client-complaint">
+<div class="text-center ">
+  <label for="idLesson">idLesson</label>
+  <input [(ngModel)]="complaint.idLesson"
+         type="number"
+         placeholder="Enter series"
+         id="idLesson"
+         required>
+</div>
+<br>
+<div class="text-center ">
+  <label for="theme">number</label>
+  <input [(ngModel)]="complaint.theme"
+         type="text"
+         placeholder="Enter number"
+         id="theme"
+         required>
+</div>
+<br>
+<div class="text-center ">
+  <label for="text">number</label>
+  <input [(ngModel)]="complaint.text"
+         type="text"
+         placeholder="Enter number"
+         id="text"
+         required>
+</div>
+  <br>
+    <button class=" btn btn-block send-button tx-tfm" (click)="setComplaint()">
+      <span>Отправить</span>
+    </button>
+    <br>
+    <button class=" btn btn-block send-button tx-tfm" [routerLink]="'/clientStart'">
+      <span>Назад</span>
+    </button>
+</div>
+

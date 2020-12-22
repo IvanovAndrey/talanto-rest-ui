@@ -1,0 +1,29 @@
+<p>schedule</p>
+
+<div *ngIf="client" class="client-request">
+  <table>
+    <tr>
+      <th>№</th>
+      <th>Дата</th>
+      <th>Тема</th>
+      <th>Учитель</th>
+      <th>Статус</th>
+      <th>Подробнее</th>
+    </tr>
+    <tr *ngFor="let lesson of createLessons">
+      <td>{{lesson.id}}</td>
+      <td>{{lesson.dateOfLesson}}</td>
+      <td>{{lesson.theme}}</td>
+      <td>{{lesson.idTeacher}}</td>
+      <td>{{lesson.status}}</td>
+      <td><li>
+        <button mat-raised-button (click)="openDialog(lesson.id)">Подробнее</button>
+      </li></td>
+    </tr>
+  </table>
+  <br>
+  <button class="btn btn-primary" type="submit" [routerLink]="'/clientStart'">
+    <span>Назад</span>
+  </button>
+
+</div>
