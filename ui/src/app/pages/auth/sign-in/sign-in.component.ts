@@ -33,7 +33,7 @@ export class SignInComponent implements OnInit {
            // if ( /*JSON.stringify(this.password) === JSON.stringify(data.body.password*/)) {
               this.storeService.setPersonType(data.body.personType);
               this.storeService.setId(data.body.personId);
-              return this.router.navigateByUrl('/clientStart');
+              return this.router.navigateByUrl('/startPage');
             /*} else {
               this.flag = true;
             }*/

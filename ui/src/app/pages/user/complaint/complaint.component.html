@@ -1,0 +1,40 @@
+<div class="text-center ">
+  <h1>Жалоба</h1>
+<div *ngIf="client" class="client-complaint">
+<div class="text-center ">
+  <label for="idLesson">id урока</label>
+  <input [(ngModel)]="complaint.idLesson"
+         type="number"
+         placeholder="Enter series"
+         id="idLesson"
+         required>
+</div>
+<br>
+<div class="text-center ">
+  <label for="theme">Тема</label>
+  <input [(ngModel)]="complaint.theme"
+         type="text"
+         placeholder="Введите тему жалобы"
+         id="theme"
+         required>
+</div>
+<br>
+<div class="text-center ">
+  <label for="text">Текст</label>
+  <textarea [(ngModel)]="complaint.text"
+         type="text"
+         placeholder="Опишите вашу проблему"
+         id="text"
+         required></textarea>
+</div>
+  <br>
+  <button class="btn btn-primary" type="submit" (click)="setComplaint()">
+    <span>Отправить</span>
+  </button>
+  <br>
+  <br>
+  <button class="btn btn-primary" type="submit" [routerLink]="'/startPage'">
+    <span>Назад</span>
+  </button>
+</div>
+</div>

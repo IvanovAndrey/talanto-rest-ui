@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Имя {{client.name}}</h1>
+<h1 mat-dialog-title>Логин {{client.login}}</h1>
+<h1 mat-dialog-title>Статус {{client.status}}</h1>
+  <div *ngIf="client" class="form">
+    <div class="text-center ">
+      <div class="form-group">
+        <button class=" btn btn-block send-button tx-tfm" [routerLink]="'/notifications'">
+          <span>Уведомления</span>
+        </button>
+      </div>
+      <button class=" btn btn-block send-button tx-tfm" [routerLink]="'/schedule'">
+        <span>Расписание</span>
+      </button>
+    </div>
+    <br>
+    <div class="text-center ">
+      <button *ngIf="client.status!='admin'" class=" btn btn-block send-button tx-tfm" [routerLink]="'/request'">
+        <span>Подать заявку</span>
+      </button>
+      <button *ngIf="client.status=='client'" class=" btn btn-block send-button tx-tfm"
+              [routerLink]="'/complaint'">
+        <span>Подать жалобу</span>
+      </button>
+    </div>
+    <div class="text-center ">
+      <button *ngIf="client.status=='admin'" class=" btn btn-block send-button tx-tfm" [routerLink]="'/userTable'">
+        <span>Пользователи</span>
+      </button>
+      <button *ngIf="client.status=='admin'" class=" btn btn-block send-button tx-tfm"
+              [routerLink]="'/profile'">
+        <span>Новое уведомление</span>
+      </button>
+      <button *ngIf="client.status=='admin'" class=" btn btn-block send-button tx-tfm"
+              [routerLink]="'/profile'">
+        <span>Создать урок</span>
+      </button>
+    </div>
+</div>
+

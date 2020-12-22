@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {ScheduleComponent} from '../../pages/client/schedule/schedule.component';
+import {ScheduleComponent} from '../../pages/user/schedule/schedule.component';
 
 @Component({
   selector: 'app-lesson',

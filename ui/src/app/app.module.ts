@@ -31,25 +31,28 @@ import {MatListModule} from '@angular/material/list';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatSelectModule} from '@angular/material/select';
 import { ProfileComponent } from './pages/profile/profile.component';
-import {ClientStartComponent} from './pages/client/clientStart/client.start.component';
+import {StartPageComponent} from './pages/user/startPage/start.page.component';
 import {UserService} from '../services/user.service';
-import { ComplaintComponent } from './pages/client/complaint/complaint.component';
-import { RequestComponent } from './pages/client/request/request.component';
-import { NotificationsComponent } from './pages/client/notifications/notifications.component';
-import { ScheduleComponent } from './pages/client/schedule/schedule.component';
+import { ComplaintComponent } from './pages/user/complaint/complaint.component';
+import { RequestComponent } from './pages/user/request/request.component';
+import { NotificationsComponent } from './pages/user/notifications/notifications.component';
+import { ScheduleComponent } from './pages/user/schedule/schedule.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { LessonComponent } from './components/lesson/lesson.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { UserTableComponent } from './pages/user/user-table/user-table.component';
 
 
 const appRoutes: Routes = [
   {path: 'sign-in', component: SignInComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'sign-up', component: SignUpComponent},
-  {path: 'clientStart', component: ClientStartComponent},
+  {path: 'startPage', component: StartPageComponent},
   {path: 'complaint', component: ComplaintComponent},
   {path: 'request', component: RequestComponent},
   {path: 'notifications', component: NotificationsComponent},
-  {path: 'schedule', component: ScheduleComponent}
+  {path: 'schedule', component: ScheduleComponent},
+  {path: 'userTable', component: UserTableComponent}
   ];
 
 @NgModule({
@@ -60,13 +63,15 @@ const appRoutes: Routes = [
     SignUpComponent,
     DialogContentComponent,
     ProfileComponent,
-    ClientStartComponent,
+    StartPageComponent,
     ComplaintComponent,
     RequestComponent,
     NotificationsComponent,
     ScheduleComponent,
     DialogComponent,
-    LessonComponent
+    LessonComponent,
+    TopBarComponent,
+    UserTableComponent
     ],
   imports: [
     BrowserModule,

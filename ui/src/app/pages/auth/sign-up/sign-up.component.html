@@ -2,7 +2,7 @@
   <div class="col-md-6 mx-auto text-center">
     <div class="header-title">
       <h1 class="wv-heading--title">
-        Sign Up
+        Регистрация
       </h1>
     </div>
   </div>
@@ -16,21 +16,30 @@
 
       <div class="form">
         <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput [(ngModel)]="name" placeholder="Name">
+          <mat-label>Имя</mat-label>
+          <input matInput [(ngModel)]="name" placeholder="Введите имя">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Login</mat-label>
-          <input matInput [(ngModel)]="login" placeholder="Login">
+          <mat-label>Логин</mat-label>
+          <input matInput [(ngModel)]="login" placeholder="Введите логин">
         </mat-form-field>
 
+        <mat-label>Выберите роль</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Статус</mat-label>
+          <mat-select [(ngModel)]="status">
+            <mat-option *ngFor="let status of statuses" [value]="status.value">
+              {{status.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
         <div [formGroup]="myForm">
           <mat-form-field style="width:100%" appearance="outline">
-            <mat-label>Password</mat-label>
+            <mat-label>Пароль</mat-label>
             <input matInput
-                   placeholder="Create your password"
+                   placeholder="Введите пароль"
                    formControlName="password"
                    [type]="hide2 ? 'password' : 'text'">
             <button mat-icon-button
@@ -42,15 +51,15 @@
             </button>
             <mat-error *ngIf="myForm.hasError('minlength', 'password')
             && !myForm.hasError('required', 'password')">
-            At least 7 characters
+            Минимум 7 символов
           </mat-error>
             <mat-error *ngIf="myForm.hasError('required', 'password')">
-              Please enter your password
+              Введите пароль
             </mat-error>
           </mat-form-field>
 
           <mat-form-field style="width:100%" appearance="outline">
-            <mat-label>Confirm password</mat-label>
+            <mat-label>Подтвердите пароль</mat-label>
             <input matInput
                    placeholder="Confirm password"
                    formControlName="confirmPassword"
@@ -64,7 +73,7 @@
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-error *ngIf="myForm.hasError('notSame')">
-              Passwords do not match
+              Пароль недостаточен
             </mat-error>
           </mat-form-field>
         </div>
@@ -73,19 +82,19 @@
           <button (click)="signUp()"
                   type="submit"
                   class=" btn btn-block send-button tx-tfm">
-            Register
+            Зарегистрироваться
           </button>
         </div>
 
         <div class="col-md-12 ">
           <div class="login-or">
             <hr class="hr-or">
-            <span class="span-or">or</span>
+            <span class="span-or">Или</span>
           </div>
         </div>
 
         <div class="form-group">
-          <button (click)="signIn()" type="submit" class=" btn btn-block send-button tx-tfm">Sign In</button>
+          <button (click)="signIn()" type="submit" class=" btn btn-block send-button tx-tfm">Войти</button>
         </div>
 
       </div>

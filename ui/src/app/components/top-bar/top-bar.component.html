@@ -1,0 +1,18 @@
+<mat-toolbar xmlns="http://www.w3.org/1999/html">
+  <div>
+    <img *ngIf="isAuthenticated" (click)="home()" class="icon"
+         src="https://icons.iconarchive.com/icons/iconexpo/speech-balloon-orange/48/speech-balloon-orange-t-icon.png"
+         alt="icon"/>
+    <img *ngIf="!isAuthenticated" class="icon"
+         src="https://icons.iconarchive.com/icons/iconexpo/speech-balloon-orange/48/speech-balloon-orange-t-icon.png"
+         alt="icon"/>
+  </div>
+
+  <span class="filler"></span>
+
+  <span *ngIf="isAuthenticated" (click)="logOut()">Выход</span>
+  <span *ngIf="!isAuthenticated" (click)="signIn()">Вход</span>
+  <span *ngIf="!isAuthenticated" (click)="signUp()">Регистрация</span>
+
+</mat-toolbar>
+

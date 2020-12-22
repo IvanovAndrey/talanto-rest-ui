@@ -1,5 +1,6 @@
-<p>request</p>
-<!-- *ngIf="client" -->
+<div class="text-center ">
+  <h1>Заявка</h1>
+  <div class="form">
 <div *ngIf="client" class="client-request">
   <h1>Выберите удобные дни</h1>
   <form [formGroup]="form" (ngSubmit)="submit()">
@@ -16,9 +17,10 @@
     <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Отправить</button>
     <br>
     <br>
-    <button class="btn btn-primary" type="submit" [routerLink]="'/clientStart'">
+    <button class="btn btn-primary" type="submit" [routerLink]="'/startPage'">
       <span>Назад</span>
     </button>
   </form>
 </div>
-
+</div>
+</div>

@@ -1,7 +1,7 @@
-<p>notifications </p>
-
+<div class="text-center ">
+  <h1>Уведомления</h1>
 <div *ngIf="client" class="client-request">
-  <table>
+  <table  class="mat-elevation-z8">
     <tr>
       <th>№</th>
       <th>От кого</th>
@@ -22,7 +22,8 @@
     </tr>
   </table>
   <br>
-  <button class="btn btn-primary" type="submit" [routerLink]="'/clientStart'">
+  <button class="btn btn-primary" type="submit" [routerLink]="'/startPage'">
     <span>Назад</span>
   </button>
+</div>
 </div>

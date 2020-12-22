@@ -6,10 +6,10 @@ import {UserService} from '../../../../services/user.service';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './client.start.component.html',
-  styleUrls: ['./client.start.component.css']
+  templateUrl: './start.page.component.html',
+  styleUrls: ['./start.page.component.css']
 })
-export class ClientStartComponent implements OnInit {
+export class StartPageComponent implements OnInit {
   private id: number;
   client: any;
 

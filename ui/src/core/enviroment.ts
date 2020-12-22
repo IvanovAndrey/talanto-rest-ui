@@ -14,7 +14,8 @@ export function createEnv() {
     setRequest: baseUrl + 'setRequest',
     getNotifications: baseUrl + 'getNotifications',
     getSingleNotification: baseUrl + 'getSingleNotification',
-    getLessons: baseUrl + 'getLessons'
+    getLessons: baseUrl + 'getLessons',
+    getUsers: baseUrl + 'getUsers'
   };
 }
 

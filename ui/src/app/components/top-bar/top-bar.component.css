@@ -1,0 +1,67 @@
+.image {
+  height: 32px;
+  width: 32px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.filler {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  font-size: 14px;
+  height: 53px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #0c548f;
+}
+
+.menu-butt {
+  background-color: #0b3498;
+  border-color: #0b3498;
+}
+
+.icon {
+  padding-right: 16px;
+  color: white;
+  font-size: 32px;
+}
+
+.bell {
+  padding-right: 16px;
+  color: white;
+  font-size: 16px;
+}
+
+span {
+  height: 100%;
+  text-align: center;
+  padding: 14px 16px;
+  color: white;
+}
+
+span:hover:not(.filler) {
+  color: #cac7c7;
+}
+
+.bell:hover{
+  color: #cac7c7;
+}
+
+.icon :hover{
+  color: #cac7c7;
+}
+
+.dropdown-content{
+  width: 180px;
+  padding: 4px 8px 4px 16px;
+  font-size: 14px;
+}
+
+.dropdown-content:hover{
+  background-color: #0366d6;
+  color: white;
+}

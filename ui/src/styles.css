@@ -16,7 +16,7 @@ body{
 
 /* SIGN-IN SIGN-OUT FP*/
 .send-button{
-  background: #68c720;
+  background: #0b3498;
   width:100%;
   font-weight: 600;
   color:#fff;
@@ -116,3 +116,15 @@ form {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.form{
+  position: center;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+  box-sizing: border-box;
+  color: rgb(94, 108, 132);
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+}
