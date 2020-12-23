@@ -1,0 +1,57 @@
+<div class="text-center ">
+  <h1>Создать урок</h1>
+  <div *ngIf="user" class="client-complaint">
+    <div class="text-center ">
+
+      <label for="theme">Дата</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Выберите дату</mat-label>
+        <input [(ngModel)]="lesson.dateOfLesson" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <label for="theme">Тема</label>
+      <input [(ngModel)]="lesson.theme"
+             type="text"
+             placeholder="Введите тему урока"
+             id="theme"
+             required>
+    </div>
+    <br>
+    <div class="text-center ">
+      <label for="teacher">Учитель</label>
+      <input [(ngModel)]="lesson.idTeacher"
+             type="number"
+             placeholder="Введите id учителя"
+             id="teacher"
+             required>
+    </div>
+    <br>
+    <mat-form-field class="example-chip-list">
+      <mat-label>Ученики</mat-label>
+      <mat-chip-list #chipList aria-label="Введите id клиентов по очереди">
+        <mat-chip *ngFor="let student of students" [selectable]="selectable"
+                  [removable]="removable" (removed)="remove(student)">
+          {{student.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Введите id клиентов по очереди"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+    </mat-form-field>
+    <br>
+    <button class="btn btn-primary" type="submit" (click)="setLesson()">
+      <span>Создать</span>
+    </button>
+    <br>
+    <br>
+    <button class="btn btn-primary" type="submit" [routerLink]="'/startPage'">
+      <span>Назад</span>
+    </button>
+  </div>
+</div>
+

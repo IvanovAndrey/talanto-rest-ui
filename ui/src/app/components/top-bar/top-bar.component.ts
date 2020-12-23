@@ -28,7 +28,6 @@ export class TopBarComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(): void {
-   // this.authChangedSubscriber.unsubscribe();
   }
 
   logOut() {
@@ -41,24 +40,8 @@ export class TopBarComponent implements OnInit , OnDestroy {
     return this.router.navigateByUrl('/startPage');
   }
 
-  profile() {
-   // return this.router.navigateByUrl('/profile');
-  }
-
-  requestCar() {
-   // return this.router.navigateByUrl('/request-car');
-  }
-
-  settings() {
-   // return this.router.navigateByUrl('/settings');
-  }
-
-  takeTrip() {
-   // return this.router.navigateByUrl('/take-trip');
-  }
-
-  allData() {
-   // return this.router.navigateByUrl('/admin');
+  test() {
+    return this.router.navigateByUrl('/profile');
   }
 
   signIn() {
@@ -67,10 +50,5 @@ export class TopBarComponent implements OnInit , OnDestroy {
 
   signUp() {
     return this.router.navigateByUrl('/sign-up');
-  }
-
-  notification() {
-    // TODO implement
-    // return this.router.navigateByUrl('/notification');
   }
 }

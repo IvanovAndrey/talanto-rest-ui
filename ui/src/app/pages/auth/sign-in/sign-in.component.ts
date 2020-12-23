@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, NgModule, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../../services/auth.service';
 import {StoreService} from '../../../../services/store.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @Component({
@@ -9,6 +11,7 @@ import {StoreService} from '../../../../services/store.service';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
+
 export class SignInComponent implements OnInit {
   public login: string;
   public password: string;
@@ -17,7 +20,6 @@ export class SignInComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService, private storeService: StoreService) {
   }
-
 
   ngOnInit(): void {
   }

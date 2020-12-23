@@ -30,28 +30,34 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatSelectModule} from '@angular/material/select';
-import { ProfileComponent } from './pages/profile/profile.component';
 import {StartPageComponent} from './pages/user/startPage/start.page.component';
 import {UserService} from '../services/user.service';
-import { ComplaintComponent } from './pages/user/complaint/complaint.component';
+import { ComplaintComponent } from './pages/client/complaint/complaint.component';
 import { RequestComponent } from './pages/user/request/request.component';
 import { NotificationsComponent } from './pages/user/notifications/notifications.component';
 import { ScheduleComponent } from './pages/user/schedule/schedule.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { LessonComponent } from './components/lesson/lesson.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
-import { UserTableComponent } from './pages/user/user-table/user-table.component';
+import { UserTableComponent } from './pages/admin/user-table/user-table.component';
+import { CreateNotificationComponent } from './pages/admin/create-notification/create-notification.component';
+import { CreateLessonComponent } from './pages/admin/create-lesson/create-lesson.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MAT_CHIPS_DEFAULT_OPTIONS, MatChipsModule} from '@angular/material/chips';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
 
 
 const appRoutes: Routes = [
   {path: 'sign-in', component: SignInComponent},
-  {path: 'profile', component: ProfileComponent},
   {path: 'sign-up', component: SignUpComponent},
   {path: 'startPage', component: StartPageComponent},
   {path: 'complaint', component: ComplaintComponent},
   {path: 'request', component: RequestComponent},
   {path: 'notifications', component: NotificationsComponent},
   {path: 'schedule', component: ScheduleComponent},
+  {path: 'createNotification', component: CreateNotificationComponent},
+  {path: 'createLesson', component: CreateLessonComponent},
   {path: 'userTable', component: UserTableComponent}
   ];
 
@@ -62,7 +68,6 @@ const appRoutes: Routes = [
     SignInComponent,
     SignUpComponent,
     DialogContentComponent,
-    ProfileComponent,
     StartPageComponent,
     ComplaintComponent,
     RequestComponent,
@@ -71,9 +76,13 @@ const appRoutes: Routes = [
     DialogComponent,
     LessonComponent,
     TopBarComponent,
-    UserTableComponent
+    UserTableComponent,
+    CreateNotificationComponent,
+    CreateLessonComponent
     ],
   imports: [
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
@@ -100,12 +109,17 @@ const appRoutes: Routes = [
     MatMenuModule,
     MatListModule,
     MatStepperModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ],
   providers: [
     AuthService,
     StoreService,
-    UserService
+    UserService,
+    { provide: MAT_CHIPS_DEFAULT_OPTIONS,
+      useValue: {
+        separatorKeyCodes: [ENTER, COMMA]
+      }}
    ],
   exports: [RouterModule],
   bootstrap: [AppComponent]

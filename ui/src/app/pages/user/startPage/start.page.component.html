@@ -7,13 +7,9 @@
         <button class=" btn btn-block send-button tx-tfm" [routerLink]="'/notifications'">
           <span>Уведомления</span>
         </button>
-      </div>
       <button class=" btn btn-block send-button tx-tfm" [routerLink]="'/schedule'">
         <span>Расписание</span>
       </button>
-    </div>
-    <br>
-    <div class="text-center ">
       <button *ngIf="client.status!='admin'" class=" btn btn-block send-button tx-tfm" [routerLink]="'/request'">
         <span>Подать заявку</span>
       </button>
@@ -21,19 +17,17 @@
               [routerLink]="'/complaint'">
         <span>Подать жалобу</span>
       </button>
-    </div>
-    <div class="text-center ">
       <button *ngIf="client.status=='admin'" class=" btn btn-block send-button tx-tfm" [routerLink]="'/userTable'">
         <span>Пользователи</span>
       </button>
       <button *ngIf="client.status=='admin'" class=" btn btn-block send-button tx-tfm"
-              [routerLink]="'/profile'">
+              [routerLink]="'/createNotification'">
         <span>Новое уведомление</span>
       </button>
       <button *ngIf="client.status=='admin'" class=" btn btn-block send-button tx-tfm"
-              [routerLink]="'/profile'">
+              [routerLink]="'/createLesson'">
         <span>Создать урок</span>
       </button>
+      </div>
     </div>
-</div>
-
+  </div>

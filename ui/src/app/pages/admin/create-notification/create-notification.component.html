@@ -1,0 +1,40 @@
+<div class="text-center ">
+  <h1>Создать уведомление</h1>
+  <div *ngIf="user" class="client-complaint">
+    <div class="text-center ">
+      <label for="idTo">Кому</label>
+      <input [(ngModel)]="notification.idTo"
+             type="number"
+             placeholder="Enter series"
+             id="idTo"
+             required>
+    </div>
+    <br>
+    <div class="text-center ">
+      <label for="theme">Тема</label>
+      <input [(ngModel)]="notification.theme"
+             type="text"
+             placeholder="Введите тему жалобы"
+             id="theme"
+             required>
+    </div>
+    <br>
+    <div class="text-center ">
+      <label for="text">Текст</label>
+      <textarea [(ngModel)]="notification.text"
+                type="text"
+                placeholder="Опишите вашу проблему"
+                id="text"
+                required></textarea>
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit" (click)="setNotification()">
+      <span>Отправить</span>
+    </button>
+    <br>
+    <br>
+    <button class="btn btn-primary" type="submit" [routerLink]="'/startPage'">
+      <span>Назад</span>
+    </button>
+  </div>
+</div>

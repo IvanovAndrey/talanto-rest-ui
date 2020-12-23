@@ -2,13 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../core/enviroment';
 import {ResponseOrMessage} from '../models/response/response.or.message.model';
-import {ApiResult} from '../models/response/api.result.model';
 import {User} from '../models/actor/user.model';
 import {Complaint} from '../models/complaint.model';
-import {SignInResponse} from '../models/actor/sign.in.response.model';
 import {RequestModel} from '../models/request.model';
 import {NotificationModel} from '../models/notification.model';
 import {Lesson} from '../models/lesson.model';
+import {LessonFull} from '../models/response/lesson.full.model';
 
 @Injectable()
 export class UserService {
@@ -27,6 +26,25 @@ export class UserService {
     return this.http.post<ResponseOrMessage<Complaint>>(url, {id, id_incedent: idLesson, theme, text});
   }
 
+  setNotification(idFrom: number, idTo: number, status: string, theme: string, text: string) {
+    const url = environment.setNotification;
+    return this.http.post<ResponseOrMessage<Notification>>(url, {id_from: idFrom, id_to: idTo, status, theme, text});
+  }
+
+  setLesson(idTeacher: number,
+            theme: string,
+            commentary: string,
+            status: string,
+            dateOfLesson: Date,
+            students: string[]) {
+    const url = environment.setLesson;
+    return this.http.post<ResponseOrMessage<LessonFull>>(url, {id_teacher: idTeacher,
+                                                                  status,
+                                                                  theme,
+                                                                  commentary,
+                                                                  date_of_lesson: dateOfLesson,
+                                                                  students});
+  }
   setRequest(id: number, daysArr: string) {
     const url = environment.setRequest;
     return this.http.post<ResponseOrMessage<RequestModel>>(url, {id, daysArr});

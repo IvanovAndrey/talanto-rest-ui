@@ -1,6 +1,5 @@
 import {EventEmitter, Injectable} from '@angular/core';
 
-// TODO refactor this code when implement spring security
 @Injectable()
 export class StoreService {
   public id: number;

@@ -5,8 +5,7 @@ import {StoreService} from '../../../../services/store.service';
 import {UserService} from '../../../../services/user.service';
 import {Lesson} from '../../../../models/lesson.model';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogComponent} from "../../../components/dialog/dialog.component";
-import {LessonComponent} from "../../../components/lesson/lesson.component";
+import {LessonComponent} from '../../../components/lesson/lesson.component';
 
 @Component({
   selector: 'app-schedule',
@@ -17,7 +16,6 @@ export class ScheduleComponent implements OnInit {
   public createLessons: Lesson[];
   @Input() client: User;
   id: number;
-  animal: string;
   name: string;
   date: any;
   teacher: any;
@@ -44,15 +42,11 @@ export class ScheduleComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialog(id: number): void {
-    // this.getNotification(id);
-    console.log('notif id is' + id);
     const dialogRef = this.dialog.open(LessonComponent, {
       width: '1000px',
-      // data: {theme: this.createNotification.theme, text: this.createNotification.text}
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // this.createNotification.status = result;
     });
   }
   getLessons() {

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../../services/auth.service';
-import * as bcrypt from 'bcryptjs';
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators, FormBuilder} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
@@ -70,14 +69,12 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    // const personType = this.checkBoxValue ? 'DRIVER' : 'CLIENT';
     const pass = this.myForm.get('password').value;
     console.log(this.status);
     this.authService.signUp(pass,
       this.name, this.login, this.status).subscribe(
       data => {
         if (data.body) {
-           // TODO показать сообщение с задержкой типо все окей
           this.router.navigateByUrl('/sign-in');
         } else {
           alert(data.message);
